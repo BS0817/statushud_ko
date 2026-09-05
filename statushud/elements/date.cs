@@ -52,7 +52,9 @@ public class StatusHudDateElement : StatusHudElement
         if (system.capi.World.Calendar.Month is >= 1 and <= 12
             && monthNames.Length >= system.capi.World.Calendar.Month)
         {
-            renderer.SetText(day + " " + monthNames[system.capi.World.Calendar.Month - 1]);
+            string month = monthNames[system.capi.World.Calendar.Month - 1];
+
+            renderer.SetText($"{month} {day}일");
         }
         else
         {
